@@ -1,0 +1,110 @@
+[
+  {
+    "profile": "micro",
+    "name": "AnkaLM-Micro",
+    "family": "dense",
+    "total_parameters": 1442432,
+    "active_parameters_per_token": 1442432,
+    "use_moe": false,
+    "num_experts": 1,
+    "top_k_experts": 1,
+    "estimated_train_ram_gb": 0.309,
+    "fits_local_ram_for_training": true
+  },
+  {
+    "profile": "edge",
+    "name": "AnkaLM-Edge",
+    "family": "edge",
+    "total_parameters": 3196608,
+    "active_parameters_per_token": 3196608,
+    "use_moe": false,
+    "num_experts": 1,
+    "top_k_experts": 1,
+    "estimated_train_ram_gb": 0.395,
+    "fits_local_ram_for_training": true
+  },
+  {
+    "profile": "tiny",
+    "name": "AnkaLM-Tiny",
+    "family": "dense",
+    "total_parameters": 5245184,
+    "active_parameters_per_token": 5245184,
+    "use_moe": false,
+    "num_experts": 1,
+    "top_k_experts": 1,
+    "estimated_train_ram_gb": 0.438,
+    "fits_local_ram_for_training": true
+  },
+  {
+    "profile": "small",
+    "name": "AnkaLM-Small",
+    "family": "dense",
+    "total_parameters": 15735168,
+    "active_parameters_per_token": 15735168,
+    "use_moe": false,
+    "num_experts": 1,
+    "top_k_experts": 1,
+    "estimated_train_ram_gb": 0.688,
+    "fits_local_ram_for_training": true
+  },
+  {
+    "profile": "moe",
+    "name": "AnkaLM-MoE",
+    "family": "moe",
+    "total_parameters": 15082752,
+    "active_parameters_per_token": 10364160,
+    "use_moe": true,
+    "num_experts": 4,
+    "top_k_experts": 2,
+    "estimated_train_ram_gb": 0.608,
+    "fits_local_ram_for_training": true
+  },
+  {
+    "profile": "extended",
+    "name": "AnkaLM-Extended",
+    "family": "dense",
+    "total_parameters": 41955840,
+    "active_parameters_per_token": 41955840,
+    "use_moe": false,
+    "num_experts": 1,
+    "top_k_experts": 1,
+    "estimated_train_ram_gb": 1.563,
+    "fits_local_ram_for_training": true
+  },
+  {
+    "profile": "edge_300m",
+    "name": "AnkaLM-Edge-300M",
+    "family": "edge",
+    "total_parameters": 226526208,
+    "active_parameters_per_token": 226526208,
+    "use_moe": false,
+    "num_experts": 1,
+    "top_k_experts": 1,
+    "estimated_train_ram_gb": 4.438,
+    "fits_local_ram_for_training": true
+  },
+  {
+    "profile": "balanced_4b",
+    "name": "AnkaLM-4B",
+    "family": "balanced_4b",
+    "total_parameters": 3372395520,
+    "active_parameters_per_token": 3372395520,
+    "use_moe": false,
+    "num_experts": 1,
+    "top_k_experts": 1,
+    "estimated_train_ram_gb": 66.503,
+    "fits_local_ram_for_training": false
+  },
+  {
+    "profile": "flagship_8b",
+    "name": "AnkaLM-8B",
+    "family": "flagship_8b",
+    "total_parameters": 7415795712,
+    "active_parameters_per_token": 7415795712,
+    "use_moe": false,
+    "num_experts": 1,
+    "top_k_experts": 1,
+    "estimated_train_ram_gb": 135.004,
+    "fits_local_ram_for_training": false
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-11-26T02:26:39+0300",
+  "gpu_model_detected": "AMD Radeon RX 9060 XT (RDNA 4 gfx1200, 0x7590)",
+  "gpu_vram_gb": 15.92,
+  "driver_version": "32.0.32029.2010",
+  "pytorch_version": "2.14.1+cpu",
+  "pytorch_cuda_rocm_available": false,
+  "onnxruntime_version": "1.24.4",
+  "directml_available": true,
+  "active_dml_provider": "DmlExecutionProvider",
+  "vision_dml_batch16_images_per_sec": 6647.3,
+  "lm_edge_dml_tokens_per_sec": 101277.1,
+  "lm_small_dml_tokens_per_sec": 46955.0,
+  "hybrid_gpu_dml_distillation_verified": true,
+  "distillation_steps_tested": 15,
+  "distillation_initial_loss": 2.43103,
+  "distillation_final_loss": 2.19735,
+  "distillation_loss_decreased": true,
+  "student_param_l2_delta": 6.86517,
+  "checkpoint_reload_verified": true,
+  "cpu_avx512_bf16_tflops": 4.6,
+  "optimal_cpu_threads": 20,
+  "honest_backend_division": {
+    "gpu_directml_workloads": "AMD Radeon RX 9060 XT (DmlExecutionProvider): Teacher distillation logit forward passes, AnkaLM-Vision batch encoding, and ONNX batch inference/evaluation.",
+    "cpu_avx512_bf16_workloads": "AMD Ryzen 9 9900X3D (20 threads, 4.60 TFLOPS BF16): PyTorch autograd backward passes, AdamW/AdamW8bit/Adafactor parameter updates, and MoE dynamic token routing."
+  }
+}

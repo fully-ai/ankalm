@@ -1,0 +1,22 @@
+{
+  "measured_at": "2026-11-26T02:23:53+0300",
+  "target_model": "AnkaLM-8B",
+  "total_parameters": 7415795712,
+  "total_layers": 32,
+  "single_layer_parameters": 230694912,
+  "single_layer_bf16_mb": 440.02,
+  "single_layer_forward_ms": 29.88,
+  "single_layer_backward_ms": 88.14,
+  "single_layer_adafactor_step_ms": 1136.37,
+  "single_layer_nvme_write_ms": 540.76,
+  "single_layer_nvme_read_ms": 326.33,
+  "nvme_write_bandwidth_mb_s": 813.7,
+  "nvme_read_bandwidth_mb_s": 1348.4,
+  "estimated_full_8b_step_time_with_nvme_offload_sec": 78.33,
+  "estimated_full_8b_1000_steps_hours": 21.76,
+  "peak_ram_during_single_8b_layer_mb": 3023.4,
+  "system_available_ram_gb": 12.79,
+  "full_in_ram_8b_possible": false,
+  "nvme_layer_streaming_8b_possible": true,
+  "engineering_conclusion": "Full in-RAM dense training of AnkaLM-8B (7,415,795,712 params) requires ~135 GB with AdamW or ~31 GB with BF16+Adafactor, exceeding the 12.79 GB free system RAM. While layer-by-layer NVMe memory-mapped streaming works at 78.33s/step (21.76 hours per 1,000 steps), the most productive in-RAM architectures for rapid convergence on this hardware are AnkaLM-Small (15.74M), AnkaLM-MoE (15.08M/10.36M active), and AnkaLM-Extended (41.96M)."
+}

@@ -1,0 +1,43 @@
+hardware_profile: edge_2gb
+api_host: 127.0.0.1
+api_port: 8420
+model:
+  name: AnkaLM-Edge
+  profile: edge
+  arch_version: '2.0'
+  model_family: edge
+  vocab_size: 8192
+  n_layers: 4
+  d_model: 192
+  d_ff: 512
+  n_heads: 4
+  n_kv_heads: 2
+  max_seq_len: 256
+  dropout: 0.02
+  activation: swiglu
+  norm_type: rmsnorm
+  norm_eps: 1.0e-05
+  pos_encoding: rope
+  rope_theta: 10000.0
+  tie_word_embeddings: true
+  init_std: 0.02
+  use_moe: false
+training:
+  batch_size: 16
+  grad_accum_steps: 1
+  max_steps: 120
+  warmup_steps: 15
+  learning_rate: 0.001
+  min_lr: 0.0001
+  weight_decay: 0.05
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  precision: bf16
+  optimizer_type: adamw
+  eval_interval: 30
+  checkpoint_interval: 60
+  log_interval: 10
+  activation_checkpointing: false
+  pack_sequences: true
+  seed: 42

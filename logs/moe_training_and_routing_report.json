@@ -1,0 +1,258 @@
+{
+  "training": {
+    "model_name": "AnkaLM-MoE",
+    "profile": "moe",
+    "parameter_count": 15082752,
+    "device": "cpu",
+    "precision": "bf16",
+    "start_step": 0,
+    "final_step": 100,
+    "steps_executed": 100,
+    "epochs_completed": 5,
+    "processed_tokens": 409600,
+    "initial_train_loss": 9.06406,
+    "final_train_loss": 3.53257,
+    "best_val_loss": 5.05921,
+    "final_val_loss": 5.05921,
+    "final_val_perplexity": 157.4658,
+    "avg_tokens_per_second": 3020.0,
+    "peak_ram_mb": 2923.89,
+    "peak_vram_mb": 0.0,
+    "initial_param_fingerprint": "e7f87c2b791758cc9282d36a04645b149fb804a20450ca77e18ea96b52707cc4",
+    "final_param_fingerprint": "73194d269dd46f41c2ef90feee96124f5573663c3f8ea5f965b2d8ec83c09508",
+    "param_l2_delta": 38.410184,
+    "weights_updated_verified": true,
+    "checkpoint_path": "C:\\Users\\ubeyt\\Desktop\\ANKA-LM\\AnkaLM\\checkpoints\\moe_final",
+    "maturity_level": "moe_trained",
+    "resumed_from": null
+  },
+  "routing_diagnostics": {
+    "total_stored_parameters": 15082752,
+    "active_parameters_per_token": 10364160,
+    "active_fraction": 0.6872,
+    "num_experts": 4,
+    "top_k_experts": 2,
+    "use_shared_expert": true,
+    "aggregate_expert_counts": [
+      3166,
+      3282,
+      3075,
+      2765
+    ],
+    "aggregate_expert_shares": [
+      0.2576,
+      0.2671,
+      0.2502,
+      0.225
+    ],
+    "dead_experts_global": [],
+    "collapse_detected_any_layer": false,
+    "last_aux_loss": 0.138164,
+    "layers": [
+      {
+        "layer": 0,
+        "num_experts": 4,
+        "top_k": 2,
+        "use_shared_expert": true,
+        "expert_token_counts": [
+          708,
+          327,
+          727,
+          286
+        ],
+        "expert_selection_fractions": [
+          0.3457,
+          0.1597,
+          0.355,
+          0.1396
+        ],
+        "expert_mean_probabilities": [
+          0.2945,
+          0.2165,
+          0.286,
+          0.2031
+        ],
+        "routing_entropy": 1.3027,
+        "max_possible_entropy": 1.3863,
+        "normalized_entropy": 0.9397,
+        "dominant_expert_index": 2,
+        "dominant_expert_share": 0.355,
+        "dead_experts": [],
+        "overflow_fraction": 0.0757,
+        "collapse_detected": false,
+        "load_balance_aux_loss": 1.06494,
+        "router_z_loss": 2.7682
+      },
+      {
+        "layer": 1,
+        "num_experts": 4,
+        "top_k": 2,
+        "use_shared_expert": true,
+        "expert_token_counts": [
+          271,
+          708,
+          425,
+          644
+        ],
+        "expert_selection_fractions": [
+          0.1323,
+          0.3457,
+          0.2075,
+          0.3145
+        ],
+        "expert_mean_probabilities": [
+          0.1917,
+          0.3082,
+          0.2317,
+          0.2683
+        ],
+        "routing_entropy": 1.325,
+        "max_possible_entropy": 1.3863,
+        "normalized_entropy": 0.9557,
+        "dominant_expert_index": 1,
+        "dominant_expert_share": 0.3457,
+        "dead_experts": [],
+        "overflow_fraction": 0.0352,
+        "collapse_detected": false,
+        "load_balance_aux_loss": 1.05756,
+        "router_z_loss": 2.30551
+      },
+      {
+        "layer": 2,
+        "num_experts": 4,
+        "top_k": 2,
+        "use_shared_expert": true,
+        "expert_token_counts": [
+          712,
+          282,
+          674,
+          380
+        ],
+        "expert_selection_fractions": [
+          0.3477,
+          0.1377,
+          0.3291,
+          0.1855
+        ],
+        "expert_mean_probabilities": [
+          0.2943,
+          0.2013,
+          0.2756,
+          0.2287
+        ],
+        "routing_entropy": 1.3186,
+        "max_possible_entropy": 1.3863,
+        "normalized_entropy": 0.9512,
+        "dominant_expert_index": 0,
+        "dominant_expert_share": 0.3477,
+        "dead_experts": [],
+        "overflow_fraction": 0.0518,
+        "collapse_detected": false,
+        "load_balance_aux_loss": 1.05275,
+        "router_z_loss": 1.59548
+      },
+      {
+        "layer": 3,
+        "num_experts": 4,
+        "top_k": 2,
+        "use_shared_expert": true,
+        "expert_token_counts": [
+          529,
+          787,
+          337,
+          395
+        ],
+        "expert_selection_fractions": [
+          0.2583,
+          0.3843,
+          0.1646,
+          0.1929
+        ],
+        "expert_mean_probabilities": [
+          0.243,
+          0.316,
+          0.2162,
+          0.2248
+        ],
+        "routing_entropy": 1.3315,
+        "max_possible_entropy": 1.3863,
+        "normalized_entropy": 0.9605,
+        "dominant_expert_index": 1,
+        "dominant_expert_share": 0.3843,
+        "dead_experts": [],
+        "overflow_fraction": 0.0718,
+        "collapse_detected": false,
+        "load_balance_aux_loss": 1.05252,
+        "router_z_loss": 1.26644
+      },
+      {
+        "layer": 4,
+        "num_experts": 4,
+        "top_k": 2,
+        "use_shared_expert": true,
+        "expert_token_counts": [
+          646,
+          274,
+          480,
+          648
+        ],
+        "expert_selection_fractions": [
+          0.3154,
+          0.1338,
+          0.2344,
+          0.3164
+        ],
+        "expert_mean_probabilities": [
+          0.2785,
+          0.2056,
+          0.2423,
+          0.2736
+        ],
+        "routing_entropy": 1.3372,
+        "max_possible_entropy": 1.3863,
+        "normalized_entropy": 0.9646,
+        "dominant_expert_index": 3,
+        "dominant_expert_share": 0.3164,
+        "dead_experts": [],
+        "overflow_fraction": 0.0068,
+        "collapse_detected": false,
+        "load_balance_aux_loss": 1.03487,
+        "router_z_loss": 1.36739
+      },
+      {
+        "layer": 5,
+        "num_experts": 4,
+        "top_k": 2,
+        "use_shared_expert": true,
+        "expert_token_counts": [
+          300,
+          904,
+          432,
+          412
+        ],
+        "expert_selection_fractions": [
+          0.1465,
+          0.4414,
+          0.2109,
+          0.2012
+        ],
+        "expert_mean_probabilities": [
+          0.2086,
+          0.3485,
+          0.2221,
+          0.2208
+        ],
+        "routing_entropy": 1.2932,
+        "max_possible_entropy": 1.3863,
+        "normalized_entropy": 0.9329,
+        "dominant_expert_index": 1,
+        "dominant_expert_share": 0.4414,
+        "dead_experts": [],
+        "overflow_fraction": 0.1289,
+        "collapse_detected": false,
+        "load_balance_aux_loss": 1.10263,
+        "router_z_loss": 1.55541
+      }
+    ]
+  }
+}

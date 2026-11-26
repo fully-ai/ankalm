@@ -1,0 +1,35 @@
+[
+  {
+    "optimizer_type": "adamw",
+    "model_name": "AnkaLM-Tiny",
+    "parameter_count": 5245184,
+    "optimizer_state_mb": 40.0177,
+    "memory_reduction_vs_adamw_pct": 0.0,
+    "initial_loss": 9.0658,
+    "final_loss": 5.9736,
+    "loss_reduced": true,
+    "tokens_per_second": 6754.7
+  },
+  {
+    "optimizer_type": "adamw_8bit",
+    "model_name": "AnkaLM-Tiny",
+    "parameter_count": 5245184,
+    "optimizer_state_mb": 10.0047,
+    "memory_reduction_vs_adamw_pct": 75.0,
+    "initial_loss": 9.0658,
+    "final_loss": 6.0729,
+    "loss_reduced": true,
+    "tokens_per_second": 6410.8
+  },
+  {
+    "optimizer_type": "adafactor",
+    "model_name": "AnkaLM-Tiny",
+    "parameter_count": 5245184,
+    "optimizer_state_mb": 0.1152,
+    "memory_reduction_vs_adamw_pct": 99.71,
+    "initial_loss": 9.0658,
+    "final_loss": 9.1306,
+    "loss_reduced": false,
+    "tokens_per_second": 7189.4
+  }
+]

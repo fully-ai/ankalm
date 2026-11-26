@@ -1,0 +1,23 @@
+{
+  "teacher_checkpoint": "small_final",
+  "teacher_model_name": "AnkaLM-Small",
+  "teacher_parameters": 0,
+  "teacher_val_loss": 4.69501,
+  "teacher_val_perplexity": 109.4,
+  "student_checkpoint": "C:\\Users\\ubeyt\\Desktop\\ANKA-LM\\AnkaLM\\checkpoints\\edge_final",
+  "student_model_name": "AnkaLM-Edge",
+  "student_parameters": 3196608,
+  "compression_ratio": 0.0,
+  "steps_executed": 100,
+  "processed_tokens": 307200,
+  "temperature": 2.0,
+  "alpha_kd": 0.5,
+  "initial_student_loss": 6.0456,
+  "final_student_loss": 2.34236,
+  "student_val_loss": 5.13229,
+  "student_val_perplexity": 169.404,
+  "capability_retention_ratio": 0.9148,
+  "avg_tokens_per_second": 2609.6,
+  "param_l2_delta_from_init": 32.463378,
+  "weights_updated_verified": true
+}

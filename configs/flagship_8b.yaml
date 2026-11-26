@@ -1,0 +1,44 @@
+hardware_profile: flagship_high_memory
+api_host: 127.0.0.1
+api_port: 8420
+model:
+  name: AnkaLM-8B
+  profile: flagship_8b
+  arch_version: '2.0'
+  model_family: flagship_8b
+  vocab_size: 8192
+  n_layers: 32
+  d_model: 4096
+  d_ff: 15360
+  n_heads: 32
+  n_kv_heads: 8
+  max_seq_len: 4096
+  dropout: 0.0
+  activation: swiglu
+  norm_type: rmsnorm
+  norm_eps: 1.0e-05
+  pos_encoding: rope
+  rope_theta: 500000.0
+  rope_scaling_factor: 1.0
+  tie_word_embeddings: true
+  init_std: 0.02
+  use_moe: false
+training:
+  batch_size: 2
+  grad_accum_steps: 16
+  max_steps: 10000
+  warmup_steps: 500
+  learning_rate: 0.0003
+  min_lr: 3.0e-05
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  precision: bf16
+  optimizer_type: adafactor
+  eval_interval: 250
+  checkpoint_interval: 500
+  log_interval: 10
+  activation_checkpointing: true
+  pack_sequences: true
+  seed: 42

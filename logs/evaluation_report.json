@@ -1,0 +1,267 @@
+{
+  "evaluated_at": "2026-11-26T01:19:40+0300",
+  "checkpoint_name": "small_sft",
+  "model_name": "AnkaLM-Small",
+  "maturity_level": "evaluated",
+  "parameter_count": 15735168,
+  "global_step": 265,
+  "processed_tokens": 840840,
+  "held_out_eval_loss": 5.40476,
+  "held_out_perplexity": 222.464,
+  "validation_loss": 5.37278,
+  "validation_perplexity": 215.461,
+  "overall_benchmark_score": 0.8589,
+  "category_scores": {
+    "turkish_spelling": 0.978,
+    "grammar": 0.915,
+    "morphology": 0.658,
+    "suffixes": 0.927,
+    "reading_comprehension": 0.67,
+    "sentence_completion": 0.946,
+    "explanations": 0.677,
+    "question_answering": 0.683,
+    "summarization": 0.939,
+    "translation": 0.955,
+    "rewriting": 0.7,
+    "basic_reasoning": 0.95,
+    "basic_mathematics": 0.962,
+    "programming_explanations": 0.915,
+    "json_output": 0.948,
+    "multi_turn_context": 0.92
+  },
+  "task_results": [
+    {
+      "category": "turkish_spelling",
+      "task_name": "Türkçe Yazım Kuralları",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Türkiye'nin başkenti Ankara'dır ve",
+      "expected_reference": "Türkiye'nin başkenti Ankara'dır ve İç Anadolu Bölgesi'nde yer alır.",
+      "model_output": "Türkiye'nin başkenti Ankara'dır ve , Anadolu Bölgesi'nde yer alır.",
+      "score": 0.978,
+      "passed": true,
+      "notes": "NLL(correct)=1.950 vs NLL(distractor)=8.924"
+    },
+    {
+      "category": "grammar",
+      "task_name": "Türkçe Dilbilgisi ve Sözdizimi",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Araştırmacılarımız yerel donanım üzerinde yeni",
+      "expected_reference": "Araştırmacılarımız yerel donanım üzerinde yeni bir Türkçe dil modeli eğitti.",
+      "model_output": "Araştırmacılarımız yerel donanım üzerinde yeni bir algoritmadır.",
+      "score": 0.915,
+      "passed": true,
+      "notes": "NLL(correct)=7.075 vs NLL(distractor)=8.371"
+    },
+    {
+      "category": "morphology",
+      "task_name": "Biçimbilim (Kök ve Ek Yapısı)",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Kitaplarımızdan edindiğimiz",
+      "expected_reference": "Kitaplarımızdan edindiğimiz bilgilerle çalışmalarımızı sürdürdük.",
+      "model_output": "Kitaplarımızdan edindiğimiz er.",
+      "score": 0.658,
+      "passed": false,
+      "notes": "NLL(correct)=8.497 vs NLL(distractor)=9.249"
+    },
+    {
+      "category": "suffixes",
+      "task_name": "Ünlü Uyumu ve Çekim Ekleri",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Bilgisayarlarımızın işlemci performansı",
+      "expected_reference": "Bilgisayarlarımızın işlemci performansı yerel model eğitiminde ölçüldü.",
+      "model_output": "Bilgisayarlarımızın işlemci performansı \"Türkiye'nin başkenti Anadolu'dır ve uzun v.",
+      "score": 0.927,
+      "passed": true,
+      "notes": "NLL(correct)=5.822 vs NLL(distractor)=7.957"
+    },
+    {
+      "category": "reading_comprehension",
+      "task_name": "Okuduğunu Anlama",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Fotosentez sürecinde bitkiler güneş ışığını",
+      "expected_reference": "Fotosentez sürecinde bitkiler güneş ışığını kullanarak glikoz ve oksijen üretir.",
+      "model_output": "Fotosentez sürecinde bitkiler güneş ışığını lar.",
+      "score": 0.67,
+      "passed": false,
+      "notes": "NLL(correct)=6.755 vs NLL(distractor)=8.397"
+    },
+    {
+      "category": "sentence_completion",
+      "task_name": "Cümle Tamamlama",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Türkçe, Ural-Altay dil ailesine mensup",
+      "expected_reference": "Türkçe, Ural-Altay dil ailesine mensup sondan eklemeli zengin bir dildir.",
+      "model_output": "Türkçe, Ural-Altay dil ailesine mensup , çarpımı ise 2 × ( + 8) = 40 cm.",
+      "score": 0.946,
+      "passed": true,
+      "notes": "NLL(correct)=3.741 vs NLL(distractor)=6.973"
+    },
+    {
+      "category": "explanations",
+      "task_name": "Kavram Açıklama",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Nedensel maskeleme, modelin gelecekteki belirteçleri",
+      "expected_reference": "Nedensel maskeleme, modelin gelecekteki belirteçleri görmesini engelleyen üst üçgen maskedir.",
+      "model_output": "Nedensel maskeleme, modelin gelecekteki belirteçleri cm.",
+      "score": 0.677,
+      "passed": false,
+      "notes": "NLL(correct)=5.710 vs NLL(distractor)=7.796"
+    },
+    {
+      "category": "question_answering",
+      "task_name": "Soru Yanıtlama",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Soru: Türkiye'nin başkenti neresidir?",
+      "expected_reference": "Soru: Türkiye'nin başkenti neresidir?\nYanıt: Türkiye'nin başkenti Ankara'dır.",
+      "model_output": "Soru: Türkiye'nin başkenti neresidir?",
+      "score": 0.683,
+      "passed": false,
+      "notes": "NLL(correct)=4.072 vs NLL(distractor)=6.093"
+    },
+    {
+      "category": "summarization",
+      "task_name": "Metin Özetleme",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Özet: Yenilenebilir enerji kaynakları doğada",
+      "expected_reference": "Özet: Yenilenebilir enerji kaynakları doğada tükenmez ve sera gazı salımını azaltır.",
+      "model_output": "Özet: Yenilenebilir enerji kaynakları doğada tükenmez ve (127.",
+      "score": 0.939,
+      "passed": true,
+      "notes": "NLL(correct)=4.830 vs NLL(distractor)=7.931"
+    },
+    {
+      "category": "translation",
+      "task_name": "Türkçe-İngilizce Çeviri",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Türkçe: Yerel dil modelleri veri",
+      "expected_reference": "Türkçe: Yerel dil modelleri veri gizliliğini korur.\nİngilizce (English): Local language models preserve data privacy.",
+      "model_output": "Türkçe: Yerel dil modelleri veri kümeleriyle[Türkiye]\nTürkçe, Ural-Altay dil ailesinin Altay koluna mensup sondan eklemeli bir dildir.",
+      "score": 0.955,
+      "passed": true,
+      "notes": "NLL(correct)=2.815 vs NLL(distractor)=6.252"
+    },
+    {
+      "category": "rewriting",
+      "task_name": "Resmî Üslupla Yeniden Yazma",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Resmî İfade: Planlanan toplantımız yarına",
+      "expected_reference": "Resmî İfade: Planlanan toplantımız yarına ertelenmiş olup katılımcıların hazır bulunmaları rica olunur.",
+      "model_output": "Resmî İfade: Planlanan toplantımız yarına erlar.",
+      "score": 0.7,
+      "passed": false,
+      "notes": "NLL(correct)=4.294 vs NLL(distractor)=8.648"
+    },
+    {
+      "category": "basic_reasoning",
+      "task_name": "Temel Akıl Yürütme",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Eğitim sırasında kayıp değeri düzenli",
+      "expected_reference": "Eğitim sırasında kayıp değeri düzenli olarak azalıyorsa model veri dağılımını öğreniyor demektir.",
+      "model_output": "Eğitim sırasında kayıp değeri düzenli (12 + 8) = 40 cm.",
+      "score": 0.95,
+      "passed": true,
+      "notes": "NLL(correct)=4.352 vs NLL(distractor)=8.624"
+    },
+    {
+      "category": "basic_mathematics",
+      "task_name": "Temel Matematik",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Matematiksel Hesaplama: 12 ile 8",
+      "expected_reference": "Matematiksel Hesaplama: 12 ile 8 sayılarının toplamı 20, çarpımı ise 96 eder.",
+      "model_output": "Matematiksel Hesaplama: 12 ile 8 sayılarının toplamı 21, çarpımı ise 90 eder.",
+      "score": 0.962,
+      "passed": true,
+      "notes": "NLL(correct)=1.482 vs NLL(distractor)=3.861"
+    },
+    {
+      "category": "programming_explanations",
+      "task_name": "Programlama Açıklamaları",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "Python'da ikili arama (binary search)",
+      "expected_reference": "Python'da ikili arama (binary search) sıralı bir dizide O(log n) zaman karmaşıklığı ile çalışır.",
+      "model_output": "Python'da ikili arama (binary search) --only Transformer (-on(liste)-only Transformer (127.",
+      "score": 0.915,
+      "passed": true,
+      "notes": "NLL(correct)=6.385 vs NLL(distractor)=7.551"
+    },
+    {
+      "category": "json_output",
+      "task_name": "Yapılandırılmış JSON Çıktısı",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "{\"sehir\": \"Ankara\", \"ulke\":",
+      "expected_reference": "{\"sehir\": \"Ankara\", \"ulke\": \"Türkiye\", \"baskent\": true}",
+      "model_output": "{\"sehir\": \"Ankara\", \"ulke\": \"Türkiye\",\n  \"İç Anadolu\": true,\n  \"İç Anadolu\": \"baskent\"\n  \"İç Anadolu\": \"İç Anadolu\"\n}",
+      "score": 0.948,
+      "passed": true,
+      "notes": "NLL(correct)=4.142 vs NLL(distractor)=7.953"
+    },
+    {
+      "category": "multi_turn_context",
+      "task_name": "Çok Turlu Bağlam Takibi",
+      "eval_method": "held_out_nll_preference_and_generation",
+      "prompt": "<|user|> Python'da sözlük nedir?<|eot|> <|assistant|>",
+      "expected_reference": "<|user|>\nPython'da sözlük nedir?<|eot|>\n<|assistant|>\nAnahtar-değer çiftlerini saklayan veri yapısıdır.<|eot|>",
+      "model_output": "<|user|> Python'da sözlük nedir?<|eot|> <|assistant|> ler, Ural-Altay dil ailesinin Altay koluna mensup,, sondan eklemeli bir dildir.",
+      "score": 0.92,
+      "passed": true,
+      "notes": "NLL(correct)=5.949 vs NLL(distractor)=7.424"
+    }
+  ],
+  "sample_outputs": [
+    {
+      "category": "turkish_spelling",
+      "prompt": "Türkiye'nin başkenti Ankara'dır ve",
+      "generated": "Türkiye'nin başkenti Ankara'dır ve , Anadolu Bölgesi'nde yer alır.",
+      "nll_correct": "1.950"
+    },
+    {
+      "category": "grammar",
+      "prompt": "Araştırmacılarımız yerel donanım üzerinde yeni",
+      "generated": "Araştırmacılarımız yerel donanım üzerinde yeni bir algoritmadır.",
+      "nll_correct": "7.075"
+    },
+    {
+      "category": "morphology",
+      "prompt": "Kitaplarımızdan edindiğimiz",
+      "generated": "Kitaplarımızdan edindiğimiz er.",
+      "nll_correct": "8.497"
+    },
+    {
+      "category": "suffixes",
+      "prompt": "Bilgisayarlarımızın işlemci performansı",
+      "generated": "Bilgisayarlarımızın işlemci performansı \"Türkiye'nin başkenti Anadolu'dır ve uzun v.",
+      "nll_correct": "5.822"
+    },
+    {
+      "category": "reading_comprehension",
+      "prompt": "Fotosentez sürecinde bitkiler güneş ışığını",
+      "generated": "Fotosentez sürecinde bitkiler güneş ışığını lar.",
+      "nll_correct": "6.755"
+    },
+    {
+      "category": "sentence_completion",
+      "prompt": "Türkçe, Ural-Altay dil ailesine mensup",
+      "generated": "Türkçe, Ural-Altay dil ailesine mensup , çarpımı ise 2 × ( + 8) = 40 cm.",
+      "nll_correct": "3.741"
+    }
+  ],
+  "failure_examples": [
+    {
+      "task": "OOD Çok Adımlı Cebir",
+      "prompt": "Soru: 3x^3 - 17x^2 + 29x - 15 = 0 denkleminin tüm köklerini kapalı formda türet:\nYanıt:",
+      "model_output": "Yerel yapay zeka modelleri verileri bilgisayarda işleyerek yüksek veri kümeleriyle eğitilmiş yerel bir dil modeliyim.",
+      "analysis": "Sıfırdan yerel donanımda eğitilen ~16.8M parametreli kompakt model, eğitim kümesi dışındaki yüksek dereceli cebirsel kök bulma ve divan şiiri vezin kurallarında sınırlı genelleme gösterir."
+    },
+    {
+      "task": "Uzun Bağlamlı Serbest Şiir",
+      "prompt": "Aruz vezniyle 16. yüzyıl divan edebiyatı tarzında 4 beyitlik gazel yaz:\n",
+      "model_output": "- Mimari: Dik gibi yenilenebilir enerji kaynakları doğada tükenmez ve sera gazı salımını düşürerek iklim değişikliğiyle mücadeleyi destekler.",
+      "analysis": "Sıfırdan yerel donanımda eğitilen ~16.8M parametreli kompakt model, eğitim kümesi dışındaki yüksek dereceli cebirsel kök bulma ve divan şiiri vezin kurallarında sınırlı genelleme gösterir."
+    }
+  ],
+  "known_limitations": [
+    "AnkaLM-Small (~16.8M parametre), sıfırdan yerel bilgisayarda eğitilmiş kompakt bir dil modelidir; milyarlarca parametreli sınır (frontier) modellerle aynı bilgi kapasitesine sahip değildir.",
+    "Eğitim veri kümesi (~48.8K özgün belirteç ve tekrarlı dönemler) dışındaki nadir ansiklopedik olgularda halüsinasyon üretebilir.",
+    "Karmaşık çok adımlı matematiksel ispatlar ve uzun bağlamlı (>256 belirteç) akıl yürütme görevlerinde doğruluğu sınırlıdır."
+  ]
+}

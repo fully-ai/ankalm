@@ -1,0 +1,53 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python bytecode & caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# Runtime caches, temporary logs & local SQLite databases
+cache/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+logs/*.log
+logs/training_metrics.jsonl
+
+# Large binary model weights, checkpoints, ONNX exports & packed tensor shards
+# (Lightweight checkpoint metadata.json and config.yaml manifests are tracked for provenance)
+checkpoints/**/*.safetensors
+checkpoints/**/*.pt
+checkpoints/**/*.bin
+checkpoints/**/*.ckpt
+checkpoints/**/*.onnx
+exports/
+models/
+datasets/tokenized/*.pt
+
+# Secrets, tokens & environment variables
+.env
+.env.*
+*.pem
+*.key
+*secret*
+*token*
+!tokenizer/**
+!ankalm/tokenizer/**
+!tests/test_tokenizer.py
+!docs/TOKENIZER.md
+
+# OS / Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

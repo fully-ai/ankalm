@@ -1,0 +1,15 @@
+{
+  "base_checkpoint": "C:\\Users\\ubeyt\\Desktop\\ANKA-LM\\AnkaLM\\checkpoints\\small_final",
+  "sft_checkpoint": "C:\\Users\\ubeyt\\Desktop\\ANKA-LM\\AnkaLM\\checkpoints\\small_sft",
+  "model_name": "AnkaLM-Small-Instruct",
+  "parameter_count": 15735168,
+  "sft_steps": 80,
+  "processed_tokens": 54397,
+  "pre_sft_loss": 7.78465,
+  "post_sft_loss": 2.50686,
+  "pre_sft_perplexity": 2403.4153,
+  "post_sft_perplexity": 12.2664,
+  "param_l2_delta_from_base": 18.584449,
+  "weights_updated_verified": true,
+  "base_checkpoint_preserved": true
+}

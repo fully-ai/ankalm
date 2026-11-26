@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnkaLM AI Studio — Çok Modlu Türkçe Yapay Zeka, MoE, PDF/Excel/Görüntü & Eğitim Merkezi</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Left Sidebar -->
+    <aside class="sidebar" id="sidebar" style="width:310px;">
+      <div class="brand-header">
+        <div class="brand-logo">🦅</div>
+        <div>
+          <h1 class="brand-title">AnkaLM Studio</h1>
+          <span class="brand-subtitle">8B/MoE/Edge • PDF • Excel • Vision • RAG</span>
+        </div>
+      </div>
+
+      <!-- 7 Workspace Switcher Tabs (Section 17.3) -->
+      <div class="nav-tabs" style="flex-wrap:wrap;">
+        <button class="nav-tab active" data-tab="chat" onclick="switchView('chat')">💬 Sohbet</button>
+        <button class="nav-tab" data-tab="docs" onclick="switchView('docs')">📄 PDF/Belge</button>
+        <button class="nav-tab" data-tab="excel" onclick="switchView('excel')">📊 Excel</button>
+        <button class="nav-tab" data-tab="vision" onclick="switchView('vision')">👁️ Görüntü/OCR</button>
+        <button class="nav-tab" data-tab="tools" onclick="switchView('tools')">🛠️ Araçlar/Kod</button>
+        <button class="nav-tab" data-tab="models" onclick="switchView('models')">🗂️ Modeller/MoE</button>
+        <button class="nav-tab" data-tab="dashboard" onclick="switchView('dashboard')">📈 Eğitim</button>
+        <button class="nav-tab" data-tab="eval" onclick="switchView('eval')">🧪 Test Lab</button>
+      </div>
+
+      <!-- Chat Controls in Sidebar -->
+      <div id="sidebar-chat-panel" class="sidebar-section">
+        <button class="btn btn-primary btn-block" onclick="createNewConversation()">+ Yeni Türkçe Sohbet</button>
+
+        <div class="search-box">
+          <input type="text" id="conv-search-input" placeholder="Sohbetlerde ara (ç, ğ, ı, İ, ö, ş, ü)..." oninput="searchConversations(this.value)" />
+        </div>
+
+        <div class="conversation-list" id="conversation-list"></div>
+
+        <div class="sidebar-actions">
+          <label class="btn btn-secondary btn-sm" style="cursor:pointer;">
+            📥 İçe Aktar
+            <input type="file" id="import-conv-input" accept=".json" style="display:none" onchange="importConversationFile(this)" />
+          </label>
+          <button class="btn btn-secondary btn-sm" onclick="exportActiveConversation()">📤 Dışa Aktar</button>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn btn-secondary btn-sm" onclick="toggleTheme()" id="theme-toggle-btn">☀️ Açık Tema</button>
+        <span class="local-badge">🔒 127.0.0.1 Çevrimdışı</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-area">
+      <!-- Top Header Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <label for="model-selector" class="topbar-label">Model Ailesi:</label>
+          <select id="model-selector" class="select-input" onchange="onModelSelectionChange()"></select>
+          <span id="model-maturity-badge" class="maturity-badge">Yükleniyor...</span>
+        </div>
+        <div class="topbar-right">
+          <label class="rag-toggle-label">
+            <input type="checkbox" id="use-rag-checkbox" />
+            <span>📚 Hibrit RAG (BM25 + Bi-Encoder)</span>
+          </label>
+          <label class="rag-toggle-label">
+            <input type="checkbox" id="use-speculative-checkbox" />
+            <span>⚡ Spekülatif Çözümleme (Edge Draft)</span>
+          </label>
+          <button class="btn btn-secondary btn-sm" onclick="toggleSettingsDrawer()">⚙️ Ayarlar</button>
+        </div>
+      </header>
+
+      <!-- WORKSPACE 1: GENERAL CHAT -->
+      <section id="view-chat" class="view-panel active">
+        <div class="chat-header-bar">
+          <div>
+            <h2 id="active-conv-title">Yeni Türkçe Sohbet</h2>
+            <small id="active-conv-meta">Yerel SQLite Geçmişi • Dense, Sparse MoE ve 2GB Edge Modelleri</small>
+          </div>
+          <div class="chat-title-actions">
+            <button class="btn btn-secondary btn-sm" onclick="promptRenameConversation()">✏️ Yeniden Adlandır</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteActiveConversation()">🗑️ Sil</button>
+          </div>
+        </div>
+
+        <div class="messages-container" id="messages-container"></div>
+
+        <!-- Multi-Format Attachment & Local Knowledge Base Bar -->
+        <div class="rag-bar" id="rag-bar">
+          <div class="rag-bar-left">
+            <label class="btn btn-secondary btn-sm" style="cursor:pointer;">
+              📎 Çok Modlu Dosya Ekle (PDF, XLSX, DOCX, PPTX, PNG/JPG, WAV, CSV, Kod)
+              <input type="file" id="rag-file-input" accept=".pdf,.xlsx,.xlsm,.csv,.tsv,.docx,.pptx,.html,.xml,.png,.jpg,.jpeg,.webp,.bmp,.gif,.wav,.txt,.md,.json,.py,.js,.ts,.rs,.c,.cpp" style="display:none" onchange="uploadRagAttachment(this)" />
+            </label>
+            <span id="rag-doc-count" class="rag-count-text">0 yerel belge dizinli</span>
+          </div>
+          <div id="rag-doc-pills" class="rag-pills"></div>
+        </div>
+
+        <div class="chat-composer">
+          <textarea id="chat-input" rows="3" placeholder="Türkçe mesajınızı yazın (Enter = Gönder)..." onkeydown="handleChatKeydown(event)"></textarea>
+          <div class="composer-buttons">
+            <button class="btn btn-primary" id="send-btn" onclick="sendChatMessage()">Gönder ➤</button>
+            <button class="btn btn-danger" id="stop-gen-btn" onclick="stopGeneration()" style="display:none;">⏹ Durdur</button>
+            <button class="btn btn-secondary" onclick="regenerateLastResponse()">🔄 Yeniden Üret</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKSPACE 2: PDF, DOCX, PPTX & DOCUMENT INTELLIGENCE -->
+      <section id="view-docs" class="view-panel" style="padding:1.25rem;overflow-y:auto;gap:1rem;">
+        <div class="dashboard-header">
+          <div>
+            <h2>📄 PDF, Word (DOCX), PowerPoint (PPTX) & Belge Zekası</h2>
+            <p>15 aşamalı yerel belge işleme hattı: çok sütunlu metin, yerel OCR, tablo çıkarımı (CSV/JSON), sayfa atıfları ve belge içi yetkisiz komut koruması.</p>
+          </div>
+          <div class="dashboard-controls">
+            <label class="btn btn-primary" style="cursor:pointer;">
+              📤 PDF / DOCX / PPTX / HTML Yükle
+              <input type="file" accept=".pdf,.docx,.pptx,.html,.xml,.txt,.md" style="display:none" onchange="analyzeUploadedDocumentWorkspace(this)" />
+            </label>
+          </div>
+        </div>
+        <div class="dashboard-panels">
+          <div class="eval-container">
+            <h3>📑 Belge Yapısı, Sayfalar, Tablolar ve Güvenlik</h3>
+            <pre id="doc-workspace-meta" class="logs-pre" style="height:290px;">Analiz için bir PDF, DOCX, PPTX veya HTML belgesi yükleyin...</pre>
+          </div>
+          <div class="eval-container">
+            <h3>❓ Sayfa Atıflı Türkçe Belge Soru-Yanıt</h3>
+            <div style="display:flex;gap:0.5rem;margin:0.65rem 0;">
+              <input type="text" id="doc-qa-input" class="text-input" placeholder="Örn: Bu PDF ne anlatıyor? / 1. sayfadaki tabloyu açıkla / Tarihleri ve fiyatları bul" />
+              <button class="btn btn-primary" onclick="askDocumentWorkspaceQuestion()">Sor</button>
+            </div>
+            <pre id="doc-qa-output" class="logs-pre" style="height:230px;">Sorunuzun sayfa/bölüm kaynaklı yanıtı burada görünecektir...</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKSPACE 3: EXCEL & SPREADSHEET INTELLIGENCE -->
+      <section id="view-excel" class="view-panel" style="padding:1.25rem;overflow-y:auto;gap:1rem;">
+        <div class="dashboard-header">
+          <div>
+            <h2>📊 Excel (XLSX/XLSM) & Tablo Analiz Çalışma Alanı</h2>
+            <p>Makrolar devre dışı bırakılarak güvenli okuma, 26+ Excel formülü yerel yorumlayıcısı (SUM, AVERAGE, IF, VLOOKUP, SUMIF) ve deterministik hesaplama.</p>
+          </div>
+          <div class="dashboard-controls">
+            <label class="btn btn-primary" style="cursor:pointer;">
+              📤 Excel (.xlsx) / CSV Yükle ve İncele
+              <input type="file" id="excel-upload-input" accept=".xlsx,.xlsm,.csv,.tsv" style="display:none" onchange="analyzeExcelWorkspace(this)" />
+            </label>
+          </div>
+        </div>
+        <div class="dashboard-panels">
+          <div class="eval-container">
+            <h3>🧮 Çalışma Sayfaları, Hücre İstatistikleri ve Formül Denetimi</h3>
+            <pre id="excel-workspace-meta" class="logs-pre" style="height:290px;">Analiz için bir .xlsx veya .csv dosyası yükleyin...</pre>
+          </div>
+          <div class="eval-container">
+            <h3>❓ Hücre Aralığı (`Sayfa!A1:F20`) Atıflı Tablo Sorgulama</h3>
+            <div style="display:flex;gap:0.5rem;margin:0.65rem 0;">
+              <input type="text" id="excel-qa-input" class="text-input" placeholder="Örn: Toplam gelir ne kadar? / Formülleri kontrol et / Eksik verileri tespit et" value="Bu Excel dosyasını özetle ve formülleri kontrol et." />
+              <button class="btn btn-primary" onclick="askExcelWorkspaceQuestion()">Hesapla</button>
+            </div>
+            <pre id="excel-qa-output" class="logs-pre" style="height:230px;">Deterministik hesaplama sonucu burada görünecektir...</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKSPACE 4: IMAGE UNDERSTANDING, OCR & ANKALM-VISION -->
+      <section id="view-vision" class="view-panel" style="padding:1.25rem;overflow-y:auto;gap:1rem;">
+        <div class="dashboard-header">
+          <div>
+            <h2>👁️ Görüntü Anlama, Yüksek Çözünürlüklü Parçalama, Yerel OCR & AnkaLM-Vision</h2>
+            <p>Sıfırdan eğitilmiş bağımsız AnkaLM-Vision (ViT + Multimodal Projector) ve %100 çevrimdışı Türkçe/İngilizce OCR motoru.</p>
+          </div>
+          <div class="dashboard-controls">
+            <label class="btn btn-primary" style="cursor:pointer;">
+              🖼️ Görüntü (PNG, JPG, WebP, BMP, TIFF, GIF) veya WAV Ses Yükle
+              <input type="file" id="vision-upload-input" accept=".png,.jpg,.jpeg,.webp,.bmp,.tiff,.gif,.wav" style="display:none" onchange="analyzeVisionWorkspace(this)" />
+            </label>
+          </div>
+        </div>
+        <div class="dashboard-panels">
+          <div class="eval-container">
+            <h3>🔍 AnkaLM-Vision Görsel Sınıfı, Parçalar (Tiles) & Yerel OCR</h3>
+            <pre id="vision-workspace-meta" class="logs-pre" style="height:290px;">Görsel veya ekran görüntüsü yükleyin...</pre>
+          </div>
+          <div class="eval-container">
+            <h3>❓ Görsel & OCR Soru-Yanıt</h3>
+            <div style="display:flex;gap:0.5rem;margin:0.65rem 0;">
+              <input type="text" id="vision-qa-input" class="text-input" placeholder="Örn: Bu resimde ne var? / Bu fotoğraftaki yazıyı oku / Resimde kaç tablo var?" value="Bu resimde ne var ve hangi yazılar okunuyor?" />
+              <button class="btn btn-primary" onclick="askVisionWorkspaceQuestion()">Analiz Et</button>
+            </div>
+            <pre id="vision-qa-output" class="logs-pre" style="height:230px;">Görsel analiz ve OCR yanıtı burada görünecektir...</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKSPACE 5: TOOLS, CALCULATOR & PYTHON SANDBOX -->
+      <section id="view-tools" class="view-panel" style="padding:1.25rem;overflow-y:auto;gap:1rem;">
+        <div class="dashboard-header">
+          <div>
+            <h2>🛠️ Kontrollü Araç Çağrısı, Matematik & İzole Python Sandbox</h2>
+            <p>Ağ erişimi kapalı, zaman sınırı ve AST güvenlik filtreli Python hesaplama ortamı, birim dönüştürücü, grafik üretici ve JSON doğrulayıcı.</p>
+          </div>
+        </div>
+        <div class="dashboard-panels">
+          <div class="eval-container">
+            <h3>🐍 İzole Yerel Python Sandbox & Hesap Makinesi</h3>
+            <div class="form-group" style="margin-top:0.5rem;">
+              <label>Araç Seçin:</label>
+              <select id="tool-name-selector" class="select-input">
+                <option value="calculator">calculator (Deterministik AST Matematik & İstatistik)</option>
+                <option value="python_sandbox">python_sandbox (İzole Yerel Python Çalıştırıcı)</option>
+                <option value="unit_converter">unit_converter (Birim Dönüştürücü)</option>
+                <option value="json_validator">json_validator (Yapılandırılmış JSON Doğrulama & Onarım)</option>
+                <option value="chart_generator">chart_generator (Yerel PNG Grafik Üretici)</option>
+                <option value="datetime_tool">datetime_tool (Yerel Tarih & Saat)</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-top:0.5rem;">
+              <label>Araç Argümanları (JSON):</label>
+              <textarea id="tool-args-input" rows="5">{"expression": "sqrt(144) + mean([10, 20, 30, 40]) * 2"}</textarea>
+            </div>
+            <button class="btn btn-primary" style="margin-top:0.5rem;" onclick="runSelectedTool()">▶ Aracı Güvenli Çalıştır</button>
+          </div>
+          <div class="eval-container">
+            <h3>📋 Araç Çalıştırma Sonucu ve Denetim Kaydı</h3>
+            <pre id="tool-exec-output" class="logs-pre" style="height:260px;">Araç çıktısı burada görünecektir...</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKSPACE 6: MODEL MANAGER, MOE ROUTING & 2GB LOW-VRAM -->
+      <section id="view-models" class="view-panel" style="padding:1.25rem;overflow-y:auto;gap:1rem;">
+        <div class="dashboard-header">
+          <div>
+            <h2>🗂️ AnkaLM Model Ailesi (8B / 4B / MoE / Dense / 2GB Edge) & Nicemleme</h2>
+            <p>Toplam saklanan parametreler ile belirteç başına aktif parametrelerin (Sparse MoE) ve 2GB VRAM profillerinin gerçek ölçümleri.</p>
+          </div>
+        </div>
+        <div id="family-summary-box" class="eval-container">Model ailesi yükleniyor...</div>
+        <div class="dashboard-panels">
+          <div id="moe-summary-box" class="eval-container">AnkaLM-MoE yönlendirme (routing) raporu yükleniyor...</div>
+          <div id="low-vram-summary-box" class="eval-container">2GB Düşük VRAM & Spekülatif Çözümleme raporu yükleniyor...</div>
+        </div>
+      </section>
+
+      <!-- WORKSPACE 7: TRAINING CONTROL CENTER DASHBOARD -->
+      <section id="view-dashboard" class="view-panel">
+        <div class="dashboard-header">
+          <div>
+            <h2>📈 AnkaLM Eğitim Kontrol Merkezi</h2>
+            <p>Gerçek zamanlı eğitim telemetrisi, gradyan/kayıp takibi ve süreç yönetimi.</p>
+          </div>
+          <div class="dashboard-controls">
+            <select id="train-config-selector" class="select-input"></select>
+            <button class="btn btn-primary" onclick="startTrainingJob()">▶ Eğitimi Başlat</button>
+            <button class="btn btn-secondary" onclick="resumeTrainingJob()">⏯ Sürdür (Resume)</button>
+            <button class="btn btn-secondary" onclick="pauseOrResumeTrainingJob()">⏸ Duraklat/Devam</button>
+            <button class="btn btn-secondary" onclick="saveImmediateCheckpoint()">💾 Kaydet</button>
+            <button class="btn btn-danger" onclick="stopTrainingJob()">⏹ Durdur</button>
+          </div>
+        </div>
+
+        <div class="telemetry-grid" id="telemetry-grid">
+          <div class="stat-card"><span class="stat-label">Süreç Durumu</span><strong class="stat-value" id="st-status">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Aktif Model</span><strong class="stat-value" id="st-model">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Parametre Sayısı</span><strong class="stat-value" id="st-params">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Sözlük Boyutu</span><strong class="stat-value" id="st-vocab">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Adım / Dönem (Epoch)</span><strong class="stat-value" id="st-steps">-</strong></div>
+          <div class="stat-card"><span class="stat-label">İşlenen Belirteç</span><strong class="stat-value" id="st-tokens">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Eğitim Kaybı (Train Loss)</span><strong class="stat-value" id="st-train-loss">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Doğrulama Kaybı (Val Loss)</span><strong class="stat-value" id="st-val-loss">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Şaşkınlık (Perplexity)</span><strong class="stat-value" id="st-ppl">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Öğrenme Oranı (LR)</span><strong class="stat-value" id="st-lr">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Hız (Belirteç / sn)</span><strong class="stat-value" id="st-tps">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Parametre L2 Değişimi</span><strong class="stat-value" id="st-l2">-</strong></div>
+          <div class="stat-card"><span class="stat-label">CPU & RAM Kullanımı</span><strong class="stat-value" id="st-ram">-</strong></div>
+          <div class="stat-card"><span class="stat-label">GPU & VRAM Durumu</span><strong class="stat-value" id="st-gpu">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Kontrol Noktası Durumu</span><strong class="stat-value" id="st-ckpt">-</strong></div>
+          <div class="stat-card"><span class="stat-label">Model Olgunluk Seviyesi</span><strong class="stat-value" id="st-maturity">-</strong></div>
+        </div>
+
+        <div class="dashboard-panels">
+          <div class="chart-box">
+            <h3>📉 Gerçek Zamanlı Eğitim ve Doğrulama Kaybı Grafiği</h3>
+            <canvas id="loss-chart-canvas" width="700" height="260"></canvas>
+          </div>
+          <div class="logs-box">
+            <div class="logs-header">
+              <h3>📜 Canlı Eğitim Günlükleri (Logs)</h3>
+              <button class="btn btn-secondary btn-sm" onclick="refreshDashboard()">🔄 Yenile</button>
+            </div>
+            <pre id="training-logs-pre" class="logs-pre">Günlükler yükleniyor...</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKSPACE 8: TURKISH EVALUATION & HARDWARE LAB -->
+      <section id="view-eval" class="view-panel">
+        <div class="dashboard-header">
+          <div>
+            <h2>🧪 Türkçe Değerlendirme Laboratuvarı & Donanım Raporu</h2>
+            <p>16 kategorili Türkçe dilbilgisi, biçimbilim, soru yanıtlama ve ayrılmış veri kümesi şaşkınlık (perplexity) ölçümleri.</p>
+          </div>
+          <div>
+            <button class="btn btn-primary" onclick="runEvaluationNow()">🧪 Seçili Kontrol Noktasını Değerlendir</button>
+          </div>
+        </div>
+
+        <div id="eval-summary-box" class="eval-container">Değerlendirme raporu yükleniyor...</div>
+        <div id="hardware-summary-box" class="eval-container" style="margin-top:1rem;">Donanım raporu yükleniyor...</div>
+      </section>
+    </main>
+
+    <!-- Right Generation Settings Drawer -->
+    <aside class="settings-drawer" id="settings-drawer" style="display:none;">
+      <h3>⚙️ Üretim ve Sistem İstem Ayarları</h3>
+      <div class="form-group">
+        <label>Sistem İstemi (System Prompt)</label>
+        <textarea id="cfg-system-prompt" rows="4">Sen AnkaLM, yerel donanımda sıfırdan eğitilmiş Türkçe yapay zeka asistanısın.</textarea>
+      </div>
+      <div class="form-group">
+        <label>Maksimum Yeni Belirteç: <span id="lbl-max-tokens">96</span></label>
+        <input type="range" id="cfg-max-tokens" min="16" max="256" value="96" oninput="document.getElementById('lbl-max-tokens').innerText=this.value" />
+      </div>
+      <div class="form-group">
+        <label>Sıcaklık (Temperature): <span id="lbl-temp">0.65</span></label>
+        <input type="range" id="cfg-temp" min="0.05" max="1.5" step="0.05" value="0.65" oninput="document.getElementById('lbl-temp').innerText=this.value" />
+      </div>
+      <div class="form-group">
+        <label>Top-K: <span id="lbl-topk">35</span></label>
+        <input type="range" id="cfg-topk" min="1" max="100" value="35" oninput="document.getElementById('lbl-topk').innerText=this.value" />
+      </div>
+      <div class="form-group">
+        <label>Top-P: <span id="lbl-topp">0.90</span></label>
+        <input type="range" id="cfg-topp" min="0.1" max="1.0" step="0.05" value="0.90" oninput="document.getElementById('lbl-topp').innerText=this.value" />
+      </div>
+      <div class="form-group">
+        <label>Tekrar Cezası (Repetition Penalty): <span id="lbl-rep">1.15</span></label>
+        <input type="range" id="cfg-rep" min="1.0" max="1.5" step="0.05" value="1.15" oninput="document.getElementById('lbl-rep').innerText=this.value" />
+      </div>
+      <div class="form-group">
+        <label><input type="checkbox" id="cfg-greedy" /> Açgözlü Çözümleme (Greedy Decoding)</label>
+      </div>
+      <div class="form-group">
+        <label>Rastgele Tohum (Seed)</label>
+        <input type="number" id="cfg-seed" value="42" class="text-input" />
+      </div>
+      <button class="btn btn-primary btn-block" onclick="saveConversationSettings()">Ayarları Uygula</button>
+    </aside>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

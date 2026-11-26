@@ -1,0 +1,209 @@
+{
+  "generated_at": "2026-11-26T00:58:52+0300",
+  "total_datasets": 7,
+  "total_documents": 726,
+  "total_tokens": 48793,
+  "total_characters": 245884,
+  "total_size_bytes": 424893,
+  "split_counts": {
+    "train": 602,
+    "validation": 50,
+    "evaluation": 50
+  },
+  "split_token_counts": {
+    "train": 39371,
+    "validation": 3873,
+    "evaluation": 3396
+  },
+  "zero_leakage_verified": true,
+  "entries": [
+    {
+      "name": "ankalm_general_and_formal_tr",
+      "category": "general_turkish",
+      "source": "AnkaLM Open Turkish Linguistic Corpus",
+      "license": "CC-BY-4.0",
+      "license_verified": true,
+      "format": "TXT",
+      "file_path": "datasets\\raw\\ankalm_general_and_formal_tr.txt",
+      "file_size_bytes": 11441,
+      "sha256_checksum": "a440c94b39355e3222e7adfe6146a0225b39afb467c6594cdab92f1810da2340",
+      "document_count": 40,
+      "token_count": 1783,
+      "character_count": 10223,
+      "language_distribution": {
+        "tr": 39,
+        "tr-en": 1
+      },
+      "average_quality_score": 1.0,
+      "processing_history": [
+        "utf8_nfc_normalization",
+        "html_markdown_cleanup",
+        "turkish_language_identification",
+        "quality_scoring",
+        "sha256_exact_deduplication",
+        "shingle_jaccard_near_deduplication"
+      ]
+    },
+    {
+      "name": "ankalm_technology_and_programming_tr",
+      "category": "programming",
+      "source": "AnkaLM Open Programming & AI Documentation",
+      "license": "CC-BY-4.0",
+      "license_verified": true,
+      "format": "MD",
+      "file_path": "datasets\\raw\\ankalm_technology_and_programming_tr.md",
+      "file_size_bytes": 4192,
+      "sha256_checksum": "eb3ce8be7903bec380e1e630c85bb07f57249b6cc5d1e585a722d71b5c3365f4",
+      "document_count": 11,
+      "token_count": 1013,
+      "character_count": 3680,
+      "language_distribution": {
+        "tr": 9,
+        "tr-en": 2
+      },
+      "average_quality_score": 0.998,
+      "processing_history": [
+        "utf8_nfc_normalization",
+        "html_markdown_cleanup",
+        "turkish_language_identification",
+        "quality_scoring",
+        "sha256_exact_deduplication",
+        "shingle_jaccard_near_deduplication"
+      ]
+    },
+    {
+      "name": "ankalm_science_math_explanations_tr",
+      "category": "science",
+      "source": "AnkaLM Open Science & Math Corpus",
+      "license": "CC-BY-4.0",
+      "license_verified": true,
+      "format": "JSONL",
+      "file_path": "datasets\\raw\\ankalm_science_math_explanations_tr.jsonl",
+      "file_size_bytes": 88263,
+      "sha256_checksum": "5f56e6e6119ec414fb7628e6f94f2d92e244a164d4d170b156c45e65cc5f5713",
+      "document_count": 230,
+      "token_count": 11817,
+      "character_count": 52931,
+      "language_distribution": {
+        "tr": 229,
+        "tr-en": 1
+      },
+      "average_quality_score": 0.9994,
+      "processing_history": [
+        "utf8_nfc_normalization",
+        "html_markdown_cleanup",
+        "turkish_language_identification",
+        "quality_scoring",
+        "sha256_exact_deduplication",
+        "shingle_jaccard_near_deduplication"
+      ]
+    },
+    {
+      "name": "ankalm_education_qa_tr",
+      "category": "question_answer",
+      "source": "AnkaLM Open Turkish Education & QA Dataset",
+      "license": "CC-BY-4.0",
+      "license_verified": true,
+      "format": "CSV",
+      "file_path": "datasets\\raw\\ankalm_education_qa_tr.csv",
+      "file_size_bytes": 36478,
+      "sha256_checksum": "de1dc6f5c96ff6325f696885631c40a2eb0a780e6396c04ed0c8eccfa6878c88",
+      "document_count": 67,
+      "token_count": 5079,
+      "character_count": 25589,
+      "language_distribution": {
+        "tr": 66,
+        "tr-en": 1
+      },
+      "average_quality_score": 0.9978,
+      "processing_history": [
+        "utf8_nfc_normalization",
+        "html_markdown_cleanup",
+        "turkish_language_identification",
+        "quality_scoring",
+        "sha256_exact_deduplication",
+        "shingle_jaccard_near_deduplication"
+      ]
+    },
+    {
+      "name": "ankalm_literature_and_bilingual_tr",
+      "category": "bilingual_tr_en",
+      "source": "AnkaLM Literary & Bilingual Corpus",
+      "license": "CC-BY-4.0",
+      "license_verified": true,
+      "format": "JSON",
+      "file_path": "datasets\\raw\\ankalm_literature_and_bilingual_tr.json",
+      "file_size_bytes": 43659,
+      "sha256_checksum": "c5a8af43ba4f5277db6ab9e58261f05c3a7d8ca951c03b77853b93eb73b712e4",
+      "document_count": 116,
+      "token_count": 4874,
+      "character_count": 28062,
+      "language_distribution": {
+        "tr": 53,
+        "tr-en": 63
+      },
+      "average_quality_score": 1.0,
+      "processing_history": [
+        "utf8_nfc_normalization",
+        "html_markdown_cleanup",
+        "turkish_language_identification",
+        "quality_scoring",
+        "sha256_exact_deduplication",
+        "shingle_jaccard_near_deduplication"
+      ]
+    },
+    {
+      "name": "ankalm_daily_conversations_tr",
+      "category": "daily_conversation",
+      "source": "AnkaLM Structured Turkish Dialogues",
+      "license": "CC-BY-4.0",
+      "license_verified": true,
+      "format": "JSONL",
+      "file_path": "datasets\\raw\\ankalm_daily_conversations_tr.jsonl",
+      "file_size_bytes": 61965,
+      "sha256_checksum": "fa0d81f6a807b9a550418260491a149819aa70d06d7c4563658cfb11827c971f",
+      "document_count": 5,
+      "token_count": 583,
+      "character_count": 2608,
+      "language_distribution": {
+        "tr": 5
+      },
+      "average_quality_score": 0.9979,
+      "processing_history": [
+        "utf8_nfc_normalization",
+        "html_markdown_cleanup",
+        "turkish_language_identification",
+        "quality_scoring",
+        "sha256_exact_deduplication",
+        "shingle_jaccard_near_deduplication"
+      ]
+    },
+    {
+      "name": "tr_wikipedia_cc_by_sa",
+      "category": "general_turkish",
+      "source": "https://tr.wikipedia.org (MediaWiki API)",
+      "license": "CC-BY-SA-4.0",
+      "license_verified": true,
+      "format": "JSONL",
+      "file_path": "datasets\\raw\\tr_wikipedia_cc_by_sa.jsonl",
+      "file_size_bytes": 178895,
+      "sha256_checksum": "c4db3447ec4cf2079331768bb5a88e5c02ff103f294bdc98d692fb3188360b1f",
+      "document_count": 257,
+      "token_count": 23644,
+      "character_count": 122791,
+      "language_distribution": {
+        "tr": 246,
+        "tr-en": 11
+      },
+      "average_quality_score": 0.9889,
+      "processing_history": [
+        "utf8_nfc_normalization",
+        "html_markdown_cleanup",
+        "turkish_language_identification",
+        "quality_scoring",
+        "sha256_exact_deduplication",
+        "shingle_jaccard_near_deduplication"
+      ]
+    }
+  ]
+}

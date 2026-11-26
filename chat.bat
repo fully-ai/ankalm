@@ -1,0 +1,7 @@
+@echo off
+setlocal
+cd /d "%~dp0"
+set PYTHONPATH=%~dp0
+if not exist ".venv\Scripts\python.exe" call install.bat
+".venv\Scripts\python.exe" -m ankalm.cli chat %*
+endlocal

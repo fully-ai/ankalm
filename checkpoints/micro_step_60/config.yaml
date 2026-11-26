@@ -1,0 +1,58 @@
+model:
+  name: AnkaLM-Micro
+  profile: micro
+  vocab_size: 8192
+  n_layers: 2
+  d_model: 128
+  d_ff: 384
+  n_heads: 4
+  n_kv_heads: 2
+  max_seq_len: 128
+  dropout: 0.0
+  activation: swiglu
+  norm_type: rmsnorm
+  norm_eps: 1.0e-05
+  pos_encoding: rope
+  rope_theta: 10000.0
+  tie_word_embeddings: true
+  init_std: 0.02
+training:
+  batch_size: 16
+  grad_accum_steps: 1
+  max_steps: 60
+  warmup_steps: 10
+  learning_rate: 0.001
+  min_lr: 0.0001
+  weight_decay: 0.05
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  precision: bf16
+  eval_interval: 20
+  checkpoint_interval: 30
+  log_interval: 10
+  num_workers: 0
+  pin_memory: false
+  activation_checkpointing: false
+  compile_model: false
+  pack_sequences: true
+  seed: 42
+storage:
+  raw_data_dir: datasets/raw
+  processed_data_dir: datasets/processed
+  tokenized_data_dir: datasets/tokenized
+  manifests_dir: datasets/manifests
+  validation_data_dir: datasets/validation
+  evaluation_data_dir: datasets/evaluation
+  tokenizer_dir: tokenizer
+  checkpoints_dir: checkpoints
+  models_dir: models
+  exports_dir: exports
+  logs_dir: logs
+  cache_dir: cache
+  conversations_db: cache/conversations.sqlite3
+  rag_dir: cache/rag
+  min_free_disk_gb: 2.0
+hardware_profile: cpu
+api_host: 127.0.0.1
+api_port: 8420

@@ -1,0 +1,79 @@
+Türkçe, Ural-Altay dil ailesinin Altay koluna mensup, sondan eklemeli (bitişken) ve ünlü uyumlarına dayalı zengin bir dildir. Kelime köklerine getirilen yapım ve çekim ekleri sayesinde tek bir sözcükle karmaşık zaman, kişi ve hal ilişkileri ifade edilebilir.
+
+Türkiye coğrafyası, Asya ile Avrupa kıtalarını birbirine bağlayan Anadolu yarımadası ve Trakya topraklarından oluşur. Üç tarafı denizlerle çevrili olan bu coğrafya, tarih boyunca pek çok medeniyete ev sahipliği yapmıştır.
+
+Dilbilimde biçimbilim (morfoloji), sözcüklerin iç yapısını, kök ve eklerin birleşme kurallarını inceler. Türkçede büyük ünlü uyumu ve küçük ünlü uyumu, eklerin ünlülerini belirleyen temel sesbilimsel kurallardır. Örneğin 'kitaplarımızdan' kelimesi, 'kitap' köküne çoğul (-lar), iyelik (-ımız) ve ayrılma hali (-dan) eklerinin sırayla gelmesiyle oluşur.
+
+Resmî yazışmalarda dilin açık, anlaşılır, kurallı ve nazik bir üslupla kullanılması esastır. Kurumlar arası bilgi alışverişinde belirsizlikten kaçınılır, tarih ve sayı bilgileri eksiksiz belirtilir ve standart yazım kurallarına titizlikle uyulur.
+
+Anadolu'nun kültürel mirası; geleneksel el sanatları, mimari eserler, sözlü edebiyat ürünleri ve zengin mutfak kültüründen meydana gelir. Misafirperverlik, dayanışma ve imece usulü çalışma toplumsal yaşamın temel yapı taşları arasındadır.
+
+Sürdürülebilir kalkınma, gelecek nesillerin ihtiyaçlarını karşılama yeteneğini tehlikeye atmadan bugünün gereksinimlerini karşılamayı hedefleyen bütüncül bir yaklaşımdır. Enerji verimliliği, su kaynaklarının korunması ve geri dönüşüm bu sürecin en önemli bileşenleridir.
+
+Şehir planlamasında yeşil alanların artırılması, toplu taşıma ağlarının güçlendirilmesi ve bisiklet yollarının yaygınlaştırılması, hem hava kalitesini iyileştirir hem de kent sakinlerinin yaşam kalitesini yükseltir.
+
+Türkçede noktalama işaretleri, cümlenin anlamını netleştirmek ve okuma akışını düzenlemek için kullanılır. Nokta tamamlanmış cümlelerin sonuna konurken, virgül eş görevli sözcükleri ve sıralı cümleleri ayırır. İki nokta ise açıklama yapılacak veya örnek verilecek ifadelerden önce kullanılır.
+
+Ankara, Türkiye'nin İç Anadolu Bölgesi'nde yer alan önemli bir şehirdir. Özellikle başkent ve idari merkez ile tanınan Ankara, aynı zamanda bozkır iklimi ve köklü üniversiteleri açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Ankara (İç Anadolu): İlgili dönemde Ankara ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin başkent ve idari merkez potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+İstanbul, Türkiye'nin Marmara Bölgesi'nde yer alan önemli bir şehirdir. Özellikle boğazı ve tarihi yarımadası ile tanınan İstanbul, aynı zamanda kültür, ticaret ve sanayi merkezi açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — İstanbul (Marmara): İlgili dönemde İstanbul ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin boğazı ve tarihi yarımadası potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+İzmir, Türkiye'nin Ege Bölgesi'nde yer alan önemli bir şehirdir. Özellikle limanı ve antik kentleri ile tanınan İzmir, aynı zamanda ılıman Akdeniz iklimi ve tarımsal üretimi açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — İzmir (Ege): İlgili dönemde İzmir ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin limanı ve antik kentleri potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Bursa, Türkiye'nin Marmara Bölgesi'nde yer alan önemli bir şehirdir. Özellikle Uludağ ve tekstil sanayisi ile tanınan Bursa, aynı zamanda Osmanlı erken dönem mimari mirası açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Bursa (Marmara): İlgili dönemde Bursa ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin Uludağ ve tekstil sanayisi potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Antalya, Türkiye'nin Akdeniz Bölgesi'nde yer alan önemli bir şehirdir. Özellikle Toros Dağları ve kıyı şeridi ile tanınan Antalya, aynı zamanda turizm ve örtü altı tarım faaliyetleri açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Antalya (Akdeniz): İlgili dönemde Antalya ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin Toros Dağları ve kıyı şeridi potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Konya, Türkiye'nin İç Anadolu Bölgesi'nde yer alan önemli bir şehirdir. Özellikle geniş ovaları ve tahıl üretimi ile tanınan Konya, aynı zamanda Mevlana kültürü ve Selçuklu eserleri açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Konya (İç Anadolu): İlgili dönemde Konya ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin geniş ovaları ve tahıl üretimi potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Gaziantep, Türkiye'nin Güneydoğu Anadolu Bölgesi'nde yer alan önemli bir şehirdir. Özellikle sanayi, ticaret ve gastronomi kültürü ile tanınan Gaziantep, aynı zamanda Zeugma mozaikleri ve tarihi çarşıları açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Gaziantep (Güneydoğu Anadolu): İlgili dönemde Gaziantep ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin sanayi, ticaret ve gastronomi kültürü potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Trabzon, Türkiye'nin Karadeniz Bölgesi'nde yer alan önemli bir şehirdir. Özellikle yemyeşil yaylaları ve limanı ile tanınan Trabzon, aynı zamanda yağışlı iklimi, çay ve fındık tarımı açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Trabzon (Karadeniz): İlgili dönemde Trabzon ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin yemyeşil yaylaları ve limanı potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Eskişehir, Türkiye'nin İç Anadolu Bölgesi'nde yer alan önemli bir şehirdir. Özellikle Porsuk Çayı ve havacılık sanayisi ile tanınan Eskişehir, aynı zamanda öğrenci dostu modern şehir yapısı açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Eskişehir (İç Anadolu): İlgili dönemde Eskişehir ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin Porsuk Çayı ve havacılık sanayisi potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Erzurum, Türkiye'nin Doğu Anadolu Bölgesi'nde yer alan önemli bir şehirdir. Özellikle yüksek platoları ve kış sporları ile tanınan Erzurum, aynı zamanda tarihi medreseleri ve karasal iklimi açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Erzurum (Doğu Anadolu): İlgili dönemde Erzurum ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin yüksek platoları ve kış sporları potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Diyarbakır, Türkiye'nin Güneydoğu Anadolu Bölgesi'nde yer alan önemli bir şehirdir. Özellikle Dicle Nehri ve tarihi bazalt surları ile tanınan Diyarbakır, aynı zamanda Hevsel Bahçeleri ve tarımsal bereketi açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Diyarbakır (Güneydoğu Anadolu): İlgili dönemde Diyarbakır ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin Dicle Nehri ve tarihi bazalt surları potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Çanakkale, Türkiye'nin Marmara Bölgesi'nde yer alan önemli bir şehirdir. Özellikle Çanakkale Boğazı ve Gelibolu Yarımadası ile tanınan Çanakkale, aynı zamanda Troya antik kenti ve rüzgar enerjisi açısından ülke ekonomisine ve kültürüne büyük katkı sağlar.
+
+Resmî Bölge Raporu — Çanakkale (Marmara): İlgili dönemde Çanakkale ilimizde altyapı, eğitim ve teknoloji yatırımları planlanan takvime uygun biçimde tamamlanmıştır. Bölgenin Çanakkale Boğazı ve Gelibolu Yarımadası potansiyeli değerlendirilerek yerel kalkınma desteklenmiştir.
+
+Türkçe Biçimbilim İncelemesi: 'ev' kökünden türetilen 'evlerimizden' sözcüğü, iyelik ve ayrılma hali kurallarına uygun olarak biçimlenmiştir. Örnek kullanım: "Evlerimizden sabah erken saatte ayrılarak yola çıktık."
+
+Türkçe Biçimbilim İncelemesi: 'kitap' kökünden türetilen 'kitaplıktakiler' sözcüğü, yapım eki, bulunma hali ve ilgi zamiri kurallarına uygun olarak biçimlenmiştir. Örnek kullanım: "Kitaplıktakiler arasında en çok bilim kurgu eserleri dikkat çekiyordu."
+
+Türkçe Biçimbilim İncelemesi: 'göz' kökünden türetilen 'gözlemlediklerimiz' sözcüğü, isimden fiil, sıfat-fiil ve iyelik eki kurallarına uygun olarak biçimlenmiştir. Örnek kullanım: "Laboratuvarda gözlemlediklerimiz teorik hesaplamalarla tam uyum gösterdi."
+
+Türkçe Biçimbilim İncelemesi: 'bilgi' kökünden türetilen 'bilgisayarlarımızın' sözcüğü, birleşik sözcük, çoğul, iyelik ve tamlayan eki kurallarına uygun olarak biçimlenmiştir. Örnek kullanım: "Bilgisayarlarımızın işlemci performansı yerel model eğitiminde ölçüldü."
+
+Türkçe Biçimbilim İncelemesi: 'çalış' kökünden türetilen 'çalışkanlığıyla' sözcüğü, fiilden isim, ünsüz yumuşaması ve vasıta eki kurallarına uygun olarak biçimlenmiştir. Örnek kullanım: "Öğrencimiz çalışkanlığıyla tüm araştırma ekibine örnek oldu."
+
+Türkçe Biçimbilim İncelemesi: 'üret' kökünden türetilen 'üretkenliğimizi' sözcüğü, fiilden sıfat, sıfattan isim ve belirtme hali kurallarına uygun olarak biçimlenmiştir. Örnek kullanım: "Yeni yazılım araçları üretkenliğimizi önemli ölçüde artırdı."
+
+Türkçe Biçimbilim İncelemesi: 'düşün' kökünden türetilen 'düşüncelerimizden' sözcüğü, fiilden isim, çoğul, iyelik ve ayrılma hali kurallarına uygun olarak biçimlenmiştir. Örnek kullanım: "Düşüncelerimizden ödün vermeden bilimsel doğruları savunduk."
+
+Türkçe Biçimbilim İncelemesi: 'araştır' kökünden türetilen 'araştırmacılarımız' sözcüğü, fiilden isim, meslek eki, çoğul ve iyelik kurallarına uygun olarak biçimlenmiştir. Örnek kullanım: "Araştırmacılarımız Türkçe doğal dil işleme alanında özgün modeller geliştirdi."

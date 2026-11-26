@@ -1,0 +1,31 @@
+{
+  "status": "running",
+  "supervisor_pid": 36728,
+  "supervisor_alive": true,
+  "started_at": "2026-11-26T02:34:50+0300",
+  "updated_at": "2026-11-26T02:34:50+0300",
+  "model_name": "AnkaLM-Small",
+  "config_path": "configs/small.yaml",
+  "dataset": "datasets/processed/train.jsonl",
+  "gpu_backend": "DirectML (DmlExecutionProvider) + AVX-512 BF16 (20 Threads)",
+  "current_step": 282,
+  "target_chunk_step": 302,
+  "max_total_steps": 5000,
+  "last_checkpoint": "C:\\Users\\ubeyt\\Desktop\\ANKA-LM\\AnkaLM\\checkpoints\\small_final",
+  "resource_snapshot": {
+    "timestamp": "2026-11-26T02:34:50+0300",
+    "cpu_usage_pct": 9.2,
+    "optimal_torch_threads": 20,
+    "total_ram_gb": 31.1,
+    "available_ram_gb": 12.45,
+    "used_ram_pct": 60.0,
+    "process_rss_mb": 204.41,
+    "disk_free_gb": 207.52,
+    "gpu_dml_available": true,
+    "memory_pressure_high": false,
+    "disk_pressure_high": false,
+    "safe_to_train": true
+  },
+  "log_file": "C:\\Users\\ubeyt\\Desktop\\ANKA-LM\\AnkaLM\\logs\\overnight_supervisor.log",
+  "failure_reason": null
+}
